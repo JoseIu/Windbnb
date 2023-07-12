@@ -1,0 +1,105 @@
+.header {
+	padding: 3.0625rem 0.5em 0.5em 0.5em;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 5.3125rem;
+	@media screen and (max-width: 750px) {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2em;
+	}
+
+	&__logo {
+		width: 10em;
+	}
+	&__img {
+	}
+	&__nav {
+		border-radius: 1em;
+		display: flex;
+		box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+		@media screen and (max-width: 750px) {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	&__search {
+		cursor: pointer;
+		padding: 1em;
+		border-right: 1px solid #f2f2f2;
+	}
+
+	&__form-container {
+		padding: 1em;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 20em;
+		transform: translateY(-100%);
+		transition: 0.3s;
+
+		display: flex;
+		justify-content: center;
+		align-items: start;
+		background-color: #fff;
+		gap: 1em;
+		@media screen and (max-width: 750px) {
+			height: 40em;
+		}
+	}
+	&__form--active {
+		// height: 500px;
+		transform: translateY(0);
+	}
+	&__form {
+		padding: 2em 1em 1em 1em;
+		width: 100%;
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.5em;
+		position: relative;
+		@media screen and (max-width: 750px) {
+			grid-template-columns: repeat(1, 1fr);
+			row-gap: 2em;
+		}
+	}
+	&__input,
+	&__submit {
+		width: 100%;
+		border-radius: 0.4em;
+		padding: 1em;
+		box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+	}
+	&__submit {
+		width: 6em;
+		height: 3em;
+		cursor: pointer;
+		@media screen and (max-width: 750px) {
+			margin: auto;
+		}
+	}
+	&__results {
+		display: none;
+		height: 10em;
+		overflow-y: auto;
+		transform: scale(0);
+		padding-top: 1em;
+		background-color: antiquewhite;
+	}
+	&__results--active {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
+		transform: scale(1);
+	}
+	&__result {
+		display: flex;
+		gap: 0.2em;
+		cursor: pointer;
+	}
+}
