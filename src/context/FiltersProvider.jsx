@@ -12,7 +12,7 @@ const FiltersProvider = ({ children }) => {
 
 	const filterStays = stayss => {
 		if (location === '') return stayss;
-		const locationLowerCase = location.toLowerCase();
+		const locationLowerCase = location.toLowerCase().trim();
 		return stayss.filter(
 			stay =>
 				stay.city.toLowerCase() === locationLowerCase || stay.maxGuests <= guest
@@ -27,6 +27,7 @@ const FiltersProvider = ({ children }) => {
 	const staysFiltered = filterStays(stayss);
 	// for header results
 	const resultsFiltered = showResults(stayss);
+	console.log(location);
 	console.log('staysFiltered', staysFiltered);
 
 	return (

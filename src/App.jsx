@@ -1,5 +1,6 @@
 import Header from './components/Header';
 import ListStays from './components/ListStays';
+import LocationAndAmount from './components/LocationAndAmount';
 import FiltersProvider from './context/FiltersProvider';
 
 const App = () => {
@@ -7,7 +8,7 @@ const App = () => {
 		<>
 			<FiltersProvider>
 				<Header />
-				<h1 className='title wrapper'>Stays in Finland</h1>
+				<LocationAndAmount />
 
 				<ListStays />
 			</FiltersProvider>

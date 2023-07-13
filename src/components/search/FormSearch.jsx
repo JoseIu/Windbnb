@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import useFilters from '../../hooks/UseFilters';
+import CloseFormIcon from '../icons/CloseFormIcon';
 import FormSearchLocation from './FormSearchLocation';
 
-const FormSearch = ({ form }) => {
+const FormSearch = ({ form, setForm }) => {
 	const formActive = form ? 'header__form--active' : '';
 	const { setLocation, setGuest } = useFilters();
 
@@ -37,6 +38,10 @@ const FormSearch = ({ form }) => {
 				</div>
 				<input className='header__submit' type='submit' value='search' />
 			</form>
+
+			<button className='header__form-close' onClick={() => setForm(!form)}>
+				<CloseFormIcon />
+			</button>
 		</div>
 	);
 };

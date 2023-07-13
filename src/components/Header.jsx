@@ -20,7 +20,7 @@ const Header = () => {
 
 				<button className='header__search'>🔍</button>
 			</nav>
-			<FormSearch form={form} />
+			<FormSearch form={form} setForm={setForm} />
 		</header>
 	);
 };
