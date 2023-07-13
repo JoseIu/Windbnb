@@ -12,8 +12,10 @@ const FiltersProvider = ({ children }) => {
 
 	const filterStays = stayss => {
 		if (location === '') return stayss;
+		const locationLowerCase = location.toLowerCase();
 		return stayss.filter(
-			stay => stay.city.toLowerCase() === location.toLowerCase()
+			stay =>
+				stay.city.toLowerCase() === locationLowerCase || stay.maxGuests <= guest
 		);
 	};
 	const showResults = stayss => {
@@ -21,11 +23,11 @@ const FiltersProvider = ({ children }) => {
 			stay.city.toLowerCase().startsWith(results.toLowerCase())
 		);
 	};
-	// for header results
-	const resultsFiltered = showResults(stayss);
 	// for body cards reuslts
 	const staysFiltered = filterStays(stayss);
-	console.log('resultsFiltered', resultsFiltered);
+	// for header results
+	const resultsFiltered = showResults(stayss);
+	console.log('staysFiltered', staysFiltered);
 
 	return (
 		<FilterContext.Provider

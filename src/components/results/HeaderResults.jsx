@@ -1,5 +1,5 @@
 import useFilters from '../../hooks/UseFilters';
-import StarIcon from '../icons/StarIcons';
+import LocationIcon from '../icons/LocationIcon';
 
 const HeaderResults = () => {
 	const { resultsFiltered, setLocation } = useFilters();
@@ -7,9 +7,9 @@ const HeaderResults = () => {
 		<li
 			key={result.id}
 			className='header__result'
-			onClick={e => console.log(e.target.textContent)}
+			onClick={e => setLocation(e.target.textContent.split('.')[0])}
 		>
-			<StarIcon /> {result.city}.{result.country}
+			<LocationIcon /> {result.city}.{result.country}
 		</li>
 	));
 };
